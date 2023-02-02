@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+            nav a {
+                @apply font-bold text-[16px] hover:text-secondary
+            }
+
+            nav > ul > li {
+            @apply p-1;
+          }
+
+            nav ul li a:hover,
+            nav ul li a.active {
+                color: #ff3b07;
+            }
+
+            .button-primary {
+                @apply bg-primary px-8 py-4 text-white rounded-[30px] hover:bg-secondary font-bold text-sm;
+            }
+
+            header {
+                @apply text-white;
+            }
+
+            .mobile-btn .close {
+            @apply hidden;
+          }
+
+          .mobile-btn.active .bar {
+            @apply hidden;
+          }
+
+            .mobile-btn.active .close {
+            @apply block;
+          }
+        }
+        
+        .submenu {
+            @apply absolute m-0 py-1 bg-primary invisible opacity-0 transition-all ease-in-out;
+        }
+
+        .submenu a {
+            @apply text-white min-w-[135px] w-full block py-1 px-4 hover:bg-secondary hover:text-white;
+        }
+
+        .has-child:hover .submenu {
+            @apply visible opacity-100;
+        }
+
+        .has-child {
+            @apply relative cursor-pointer;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active2, .dot:hover {
+            background-color: #717171;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        
+        @media screen  and (max-width:1023px) {
+            nav {
+                left: -100%;
+                transition: all .3s ease-in-out;
+            }
+
+            nav > ul > li {
+                @apply w-full p-0 gap-0;
+            }
+
+            .pc-btn {
+                @apply float-none bg-primary w-32 px-4 py-3 text-white rounded-[30px] font-bold text-xs ;
+            }
+
+            .pc-btn1 {
+                @apply  bg-white w-32 px-4 py-3 text-black rounded-[30px] font-bold text-xs ;
+            }
+
+            .pc-btn2 {
+                @apply bg-primary w-32 px-3 py-2 text-white rounded-[30px] font-bold text-[10px];
+            }
+
+            .btn-search {
+                @apply absolute top-2 right-[-38px];
+            }
+
+            .btn-academic {
+                @apply float-none flex justify-center mt-10;
+            }
+
+            .btn-academic2{
+                @apply mt-[30px]
+            }
+
+            .btn-presen {
+                @apply flex flex-col;
+            }
+
+            .btn-presen2 {
+                @apply mt-10 flex justify-center;
+            }
+
+            .btn-presen3 {
+                @apply mt-[30px];
+            }
+
+            .img-pres {
+                @apply w-full;
+            }
+
+            .nav-fix {
+                @apply flex justify-start bg-primary w-full pt-[30px] pb-[15px] p-2 fixed top-0 left-0 z-20;
+            }
+
+            .mobile-kepsek {
+                @apply flex flex-col justify-center items-center;
+            }
+
+            .has-child  {
+                @apply overflow-hidden;
+            }
+
+            .has-child > span.caret {
+                @apply invert-0 top-4;
+            }
+
+            .has-child.active .submenu {
+                @apply visible opacity-100 max-h-[1000px];
+            }
+
+            nav .submenu {
+                @apply visible opacity-100 relative w-full max-h-0;
+            }
+
+            .submenu {
+                @apply bg-primary;
+            }
+
+            nav.active {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav > ul > li {
+                @apply w-full p-0;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .pc-search {
+                @apply  -right-96;
+            }
+        }
+
+        
+       
